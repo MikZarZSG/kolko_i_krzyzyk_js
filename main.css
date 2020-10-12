@@ -1,1 +1,27 @@
-body { background-color: #222; }
+body { 
+    background-color: #222;
+    color: white;
+    font-family: Arial;
+}
+
+.baner {
+    text-align: center;
+}
+
+.kontener {
+    width: 480px;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.blok {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    border: 2px solid red;
+    display: inline-block;
+}
+
+.kolejka {
+    text-align: center;
+}
