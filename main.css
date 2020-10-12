@@ -9,16 +9,14 @@ body {
 }
 
 .kontener {
-    width: 480px;
+    width: 460px;
     margin: 0 auto;
-    height: 500px;
 }
 
 .blok {
     width: 150px;
     height: 150px;
-    background-color: orange;
-    border: 2px solid red;
+    background-color: white;
     display: inline-block;
 }
 
