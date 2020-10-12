@@ -8,4 +8,6 @@ for(i = 0; i < 9; i++) {
 
 function akcjaDlaPola(id) {
     console.log(id);
+    pola[id].style = "background-color: red";
+    pola[id].removeEventListener("click", akcjaDlaPola);
 }
