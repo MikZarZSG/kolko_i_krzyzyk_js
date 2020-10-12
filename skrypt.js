@@ -9,5 +9,9 @@ for(i = 0; i < 9; i++) {
 function akcjaDlaPola(id) {
     console.log(id);
     pola[id].style = "background-color: red";
-    pola[id].removeEventListener("click", akcjaDlaPola);
+    
+    //Usunięcie listenera
+    var nazwa = "pole" + id;
+    var new_el = pola[id].cloneNode(false);
+    pola[id].parentNode.replaceChild(new_el, pola[id]);
 }
