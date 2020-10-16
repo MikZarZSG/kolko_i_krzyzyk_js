@@ -20,6 +20,7 @@ kolejGracza(gracz);
 
 
 //Funkcje
+/* Akcja po wciśnięciu przycisku */
 function akcjaDlaPola(id) {
     oznaczPole(id);
     ruchy++;
@@ -35,6 +36,7 @@ function akcjaDlaPola(id) {
     pola[id].parentNode.replaceChild(new_el, pola[id]);
 }
 
+/* Oznaczenie wybranego pola */
 function oznaczPole(id) {
     if(gracz == "O") {
         pola[id].classList.add("kolko");
@@ -46,10 +48,12 @@ function oznaczPole(id) {
     pola[id].classList.add("zablokowany");
 }
 
+/* Pokazuje, który gracz ma ruch */
 function kolejGracza() {
     kolejka.innerHTML = "<h2>" + gracz + "</h2>";
 }
 
+/* Sprawdza, czy nastąpiła wygrana albo remis */
 function czyKoniecGry() {
     if(     (odp[0] != null && odp[0] == odp[1] && odp[1] == odp[2]) ||
             (odp[3] != null && odp[3] == odp[4] && odp[4] == odp[5]) ||
@@ -70,11 +74,13 @@ function czyKoniecGry() {
     return false;
 }
 
+/* Zmiana gracza, który ma ruch */
 function zmianaGracza() {
     if(gracz == "O") gracz = "X";
     else if(gracz == "X") gracz = "O";
 }
 
+/* Usunięcie listenerów z bloków w przypadku wygranej */
 function usuniecieListenerow() {
     for(i = 0; i < 9; i++) {
         if(odp[i] == null) {
