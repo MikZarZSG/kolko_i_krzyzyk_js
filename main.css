@@ -21,9 +21,8 @@ body {
     cursor: pointer;
 }
 
-.kolko {
-    background-color: red;
-}
+.kolko { background-image: url("img/kolko.jpg"); }
+.krzyzyk { background-image: url("img/krzyzyk.jpg"); }
 
 .zablokowany {
     cursor: default;

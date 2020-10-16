@@ -9,6 +9,7 @@ for(i = 0; i < 9; i++) {
 function akcjaDlaPola(id) {
     console.log(id);
     pola[id].classList.add("kolko");
+    //pola[id].classList.add("krzyzyk");
     pola[id].classList.add("zablokowany");
     
     //Usunięcie listenera
