@@ -83,6 +83,5 @@ function usuniecieListenerow() {
             pola[i].parentNode.replaceChild(new_el, pola[i]);
             
         }
-        console.log(pola[i]);
     }
 }
