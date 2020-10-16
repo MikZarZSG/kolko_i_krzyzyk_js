@@ -18,6 +18,15 @@ body {
     height: 150px;
     background-color: white;
     display: inline-block;
+    cursor: pointer;
+}
+
+.kolko {
+    background-color: red;
+}
+
+.zablokowany {
+    cursor: default;
 }
 
 .kolejka {
