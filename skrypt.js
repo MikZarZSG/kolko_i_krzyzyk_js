@@ -22,9 +22,11 @@ kolejGracza(gracz);
 //Funkcje
 function akcjaDlaPola(id) {
     oznaczPole(id);
-    kolejGracza(gracz);
     ruchy++;
-    czyWygrana(gracz);
+    if(!czyKoniecGry()) {
+        zmianaGracza();
+        kolejGracza();
+    }
     
     //Usunięcie listenera
     var nazwa = "pole" + id;
@@ -36,20 +38,18 @@ function oznaczPole(id) {
     if(gracz == "O") {
         pola[id].classList.add("kolko");
         odp[id] = "O";
-        gracz = "X";
     } else if(gracz == "X") {
         pola[id].classList.add("krzyzyk");
         odp[id] = "X";
-        gracz = "O";
     }
     pola[id].classList.add("zablokowany");
 }
 
-function kolejGracza(gracz) {
+function kolejGracza() {
     kolejka.innerHTML = "<h2>" + gracz + "</h2>";
 }
 
-function czyWygrana(gracz) {
+function czyKoniecGry() {
     if(     (odp[0] != null && odp[0] == odp[1] && odp[1] == odp[2]) ||
             (odp[3] != null && odp[3] == odp[4] && odp[4] == odp[5]) ||
             (odp[6] != null && odp[6] == odp[7] && odp[7] == odp[8]) ||
@@ -59,6 +59,17 @@ function czyWygrana(gracz) {
             (odp[0] != null && odp[0] == odp[4] && odp[4] == odp[8]) ||
             (odp[2] != null && odp[2] == odp[4] && odp[4] == odp[6])
     ) {
-       console.log("Gratulacje!");
+        console.log("Gratulacje! " + gracz);
+        return true;        
+    } else if(ruchy >= 9) {
+        console.log("Remis!");
+        return true;
     }
+    
+    return false;
+}
+
+function zmianaGracza() {
+    if(gracz == "O") gracz = "X";
+    else if(gracz == "X") gracz = "O";
 }
