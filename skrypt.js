@@ -59,10 +59,10 @@ function czyKoniecGry() {
             (odp[0] != null && odp[0] == odp[4] && odp[4] == odp[8]) ||
             (odp[2] != null && odp[2] == odp[4] && odp[4] == odp[6])
     ) {
-        console.log("Gratulacje! " + gracz);
+        kolejka.innerHTML = "<h2>Wygrywa gracz: " + gracz + "</h2>";
         return true;        
     } else if(ruchy >= 9) {
-        console.log("Remis!");
+        kolejka.innerHTML = "<h2>Remis</h2>";
         return true;
     }
     
