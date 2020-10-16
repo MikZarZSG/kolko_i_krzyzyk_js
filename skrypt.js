@@ -23,13 +23,14 @@ kolejGracza(gracz);
 function akcjaDlaPola(id) {
     oznaczPole(id);
     ruchy++;
-    if(!czyKoniecGry()) {
+    if(czyKoniecGry()) {
+        usuniecieListenerow();
+    } else {
         zmianaGracza();
         kolejGracza();
     }
     
     //Usunięcie listenera
-    var nazwa = "pole" + id;
     var new_el = pola[id].cloneNode(false);
     pola[id].parentNode.replaceChild(new_el, pola[id]);
 }
@@ -72,4 +73,16 @@ function czyKoniecGry() {
 function zmianaGracza() {
     if(gracz == "O") gracz = "X";
     else if(gracz == "X") gracz = "O";
+}
+
+function usuniecieListenerow() {
+    for(i = 0; i < 9; i++) {
+        if(odp[i] == null) {
+            pola[i].classList.add("zablokowany");
+            var new_el = pola[i].cloneNode(false);
+            pola[i].parentNode.replaceChild(new_el, pola[i]);
+            
+        }
+        console.log(pola[i]);
+    }
 }
